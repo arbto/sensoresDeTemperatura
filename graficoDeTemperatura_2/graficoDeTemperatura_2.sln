@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35017.193
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "graficoDeTemperatura_2", "graficoDeTemperatura_2.csproj", "{FAA1A426-02B6-41FB-AC64-36CE344F38FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAA1A426-02B6-41FB-AC64-36CE344F38FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA1A426-02B6-41FB-AC64-36CE344F38FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA1A426-02B6-41FB-AC64-36CE344F38FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA1A426-02B6-41FB-AC64-36CE344F38FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D501EA7-C948-4B9B-A77A-477B9F4CFEBC}
+	EndGlobalSection
+EndGlobal

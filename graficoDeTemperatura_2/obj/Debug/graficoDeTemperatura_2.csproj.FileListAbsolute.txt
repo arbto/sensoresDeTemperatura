@@ -1,0 +1,11 @@
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\bin\Debug\graficoDeTemperatura_2.exe.config
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\bin\Debug\graficoDeTemperatura_2.exe
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\bin\Debug\graficoDeTemperatura_2.pdb
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.csproj.AssemblyReference.cache
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.Form1.resources
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.Properties.Resources.resources
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.csproj.GenerateResource.cache
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.csproj.CoreCompileInputs.cache
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.exe
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.pdb
+C:\Users\i5\Documents\projetosWindowsForms\graficoDeTemperatura_2\graficoDeTemperatura_2\obj\Debug\graficoDeTemperatura_2.Form2.resources
