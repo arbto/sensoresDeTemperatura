@@ -212,7 +212,6 @@ namespace graficoDeTemperatura_2
                 //DE MODO QUE, USANDO O ÍNDICE posicaoDoCaracter NESSE LOOP FOR, É POSSÍVEL LER 
                 //TODOS OS CARACTERES DA STRING LINE DESDE O PRIMEIRO ATÉ O ÚLTIMO.
                 number_of_x = 0; //ZERA ESSA VARIÁVEL PARA QUE SEJA USADA NO LOOP FOR A SEGUIR
-                 //ZERA ESSA VARIÁVEL PARA QUE SEJA USADA NO LOOP FOR A SEGUIR
                 for (posicaoDoCaracter = 0; posicaoDoCaracter < numeroDeCaracteres; posicaoDoCaracter++){
                     //o que deverá ser feito a cada iteração deste loop for:
                     //LER CARACTERES DE INDICE posicaoDoCaractere E A CADA 'x' LIDO, INCREMENTAR
@@ -469,6 +468,18 @@ namespace graficoDeTemperatura_2
             }
 
 
+            /*
+             * indice i:                            0      1      2      3      4      5      6      7      8      9      10     11     12
+             * ex. de termopar1_numeric:          20.00  20.25  20.50  20.75  21.00  21.25  21.50   21.75  22.00  22.25  22.50  22.75  23.00                       
+             * ex. de termopar1_numeric_10em10s:  20.00  22.50
+             * 
+             * Se os dados acima foram obtidos a partir de um arquivo gerado pelo circuito dos sensores, então podemos concluir que
+             * esse arquivo tem 13 linhas. Com isso, podemos concluir também que o array termopar1_numeric_10em10s tem 
+             * numeroDeLinhas_10em10s = 13/10 = 1. Mas essa variável inteira numeroDeLinhas_10em10s é usada geralmente como 
+             * o índice da matriz numeroDeLinhas_10em10s, e índice de valor 1 representa o segundo elemento (pois o primeiro tem 
+             * índice 0).
+             * 
+             */
 
 
             //Construindo arrays menores, com dados obtidos de 10 em 10 s
@@ -774,7 +785,6 @@ namespace graficoDeTemperatura_2
                                     formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, numeroDeLinhas_10em10min, mediaTermopares1e2_numeric_10em10min, sensores_time_10em10min);
                             }
                         }
-
                     }
 
                     //Se o usuário escolheu "Usar intervalo"
@@ -858,11 +868,17 @@ namespace graficoDeTemperatura_2
                                             DateTime[] arrayCortada_X = arrayDatetimeCortada_10em10s(sensores_time_10em10s, inicio, fim);
 
 
+                                            //Console.WriteLine("++++++++++++++++++++++++++++++++");
+                                            //Console.WriteLine(arrayCortada_Y.Length);
+                                            //Console.WriteLine(arrayCortada_X.Length);
+                                            //Console.WriteLine("++++++++++++++++++++++++++++++++");
+
+
                                             //for(int i=0; i < arrayCortada_Y.Length; i++)
                                             //{
                                             //    Console.WriteLine(arrayCortada_X[i]);
                                             //}
-                                          
+
 
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
@@ -936,7 +952,6 @@ namespace graficoDeTemperatura_2
             fim_corrigido = arrayEntradaX[arrayEntradaX.Length - 1];
             int diferenca = 0;
 
-
             for (int i = 0; i < arrayEntradaX.Length; i++){
                 if (DateTime.Compare(inicio, arrayEntradaX[i]) >= 0){
                     if (DateTime.Compare(inicio, arrayEntradaX[i]) == 0){
@@ -969,8 +984,6 @@ namespace graficoDeTemperatura_2
                     }
                 }
             }
-
-
 
             for(int i = arrayEntradaX.Length - 1; i >= 0; i--){
                 Console.WriteLine("#### fim= " + fim + " #### arrayEntrada[i]= " + arrayEntradaX[i] + " #### i= " + i);
@@ -1007,19 +1020,11 @@ namespace graficoDeTemperatura_2
             }
 
 
-
             // A partir daqui, proceder com a lógica usando as novas variáveis
             // inicio_corrigido e fim_corrigido
 
-            //double tamanhoDaArrayDeSaida = (fim_corrigido - inicio_corrigido).TotalSeconds + 1;
             int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 10) + 1;
-            Console.WriteLine("#############################################################################");
-            Console.WriteLine("############# tamanhoDaArrayDeSaida: "+tamanhoDaArrayDeSaida);
-            Console.WriteLine("############# inicio_corrigido: " + inicio_corrigido );
-            Console.WriteLine("############# fim_corrigido: " + fim_corrigido );
-            Console.WriteLine("############# inicio: " + inicio);
-            Console.WriteLine("############# fim: " + fim);
-            Console.WriteLine("#############################################################################");
+
             decimal[] arrayDeSaida = new decimal[tamanhoDaArrayDeSaida];
 
             /*
@@ -1092,27 +1097,30 @@ namespace graficoDeTemperatura_2
             //inicialização básica para não dar erro:
             inicio_corrigido = inicio;
             fim_corrigido = fim;
+            int diferenca = 0;
 
-
-            for (int i = 0; i < arrayEntrada.Length; i++){
-                if (inicio >= arrayEntrada[i]){
-                    if (inicio == arrayEntrada[i]){
-                        inicio_corrigido = inicio;
+            for(int i=0; i<arrayEntrada.Length; i++){
+                if(inicio >= arrayEntrada[i]){
+                    if(inicio == arrayEntrada[i]){
+                        inicio_corrigido = arrayEntrada[i];
                         break;
                     }
                     else{
-                        int diferenca = (int)(inicio - arrayEntrada[i]).TotalSeconds;
-                        if (diferenca <= 5){
+                        diferenca = (int)(inicio - arrayEntrada[i]).TotalSeconds;
+                        if(diferenca <= 5){
                             inicio_corrigido = arrayEntrada[i];
+                            diferenca = 0;
                             break;
                         }
-                        else{
-                            if (i == arrayEntrada.Length - 1){
-                                inicio_corrigido = arrayEntrada[i];
+                        else if(diferenca <= 10){
+                            if(i != (arrayEntrada.Length - 1)){
+                                inicio_corrigido = arrayEntrada[i + 1];
+                                diferenca = 0;
                                 break;
                             }
                             else{
-                                inicio_corrigido = arrayEntrada[i + 1];
+                                inicio_corrigido = arrayEntrada[i];
+                                diferenca = 0;
                                 break;
                             }
                         }
@@ -1120,33 +1128,34 @@ namespace graficoDeTemperatura_2
                 }
             }
 
-            for (int i = 0; i < arrayEntrada.Length; i++){
-                if (fim >= arrayEntrada[i]){
-                    if (fim == arrayEntrada[i]){
-                        fim_corrigido = fim;
+            for(int i = arrayEntrada.Length - 1; i>=0; i--){
+                if(fim <= arrayEntrada[i]){
+                    if(fim == arrayEntrada[i]){
+                        fim_corrigido = arrayEntrada[i];
                         break;
                     }
                     else{
-                        int diferenca = (int)(fim - arrayEntrada[i]).TotalSeconds;
-                        if (diferenca <= 5){
+                        diferenca = (int)(arrayEntrada[i] - fim).TotalSeconds;
+                        if(diferenca <= 5){
                             fim_corrigido = arrayEntrada[i];
+                            diferenca = 0;
                             break;
                         }
-                        else{
-                            if (i == arrayEntrada.Length - 1){
-                                fim_corrigido = arrayEntrada[i];
+                        else if(diferenca <= 10){
+                            if (i != 0){
+                                fim_corrigido = arrayEntrada[i - 1];
+                                diferenca = 0;
                                 break;
                             }
                             else{
-                                fim_corrigido = arrayEntrada[i + 1];
+                                fim_corrigido = arrayEntrada[i];
+                                diferenca = 0;
                                 break;
                             }
                         }
                     }
                 }
             }
-
-
 
             //double tamanhoDaArrayDeSaida = (fim - inicio).TotalSeconds + 1;
             int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds/10) + 1;
@@ -1157,17 +1166,16 @@ namespace graficoDeTemperatura_2
             int indice_aux_inicio = 0;
             int indice_aux_fim = 0;
             for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
-                if (arrayEntrada[i] == inicio)
+                if (arrayEntrada[i] == inicio_corrigido)
                     indice_aux_inicio = i;
 
-                if (arrayEntrada[i] == fim)
+                if (arrayEntrada[i] == fim_corrigido)
                     indice_aux_fim = i;
             }
             for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
                 arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
             }
             return arrayDeSaida;
-
         }
         
 
