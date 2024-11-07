@@ -832,56 +832,100 @@ namespace graficoDeTemperatura_2
 
                                     if (String.Equals(amostragem, "A cada segundo")){
 
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
+
                                         if (sensoresEscolhidos[0] == "Termopar 1"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada(termopar1_numeric, sensores_time, inicio, fim);
-                                            DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        else if(sensoresEscolhidos[0] == "Termopar 2"){
+                                        else if (sensoresEscolhidos[0] == "Termopar 2"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada(termopar2_numeric, sensores_time, inicio, fim);
-                                            DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        else if (sensoresEscolhidos[0] == "Lm35"){
+                                        else if(sensoresEscolhidos[0] == "Lm35"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada(lm35_numeric, sensores_time, inicio, fim);
-                                            DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
                                         else if (sensoresEscolhidos[0] == "Media dos termopares"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada(mediaTermopares1e2_numeric, sensores_time, inicio, fim);
-                                            DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
 
                                     }
-                                    else if(String.Equals(amostragem, "A cada dez segundos")){
+                                    else if (String.Equals(amostragem, "A cada dez segundos")){
 
-                                        if (sensoresEscolhidos[0] == "Termopar 1"){
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_10em10s(sensores_time_10em10s, inicio, fim);
 
-                                            if (DateTime.Compare(fim, sensores_time_10em10s[sensores_time_10em10s.Length -1 ]) >= 0){
-                                                fim = sensores_time_10em10s[sensores_time_10em10s.Length - 1];
-                                            }
-                                            
-                                            //ERRO NA PLOTAGEM DESTE GRÁFICO! ENCONTRAR O PROBLEMA E CORRIGIR!
-
+                                        if (sensoresEscolhidos[0] == "Termopar 1"){         
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_10em10s(termopar1_numeric_10em10s, sensores_time_10em10s, inicio,fim);
-                                            DateTime[] arrayCortada_X = arrayDatetimeCortada_10em10s(sensores_time_10em10s, inicio, fim);
-
-
-                                            //Console.WriteLine("++++++++++++++++++++++++++++++++");
-                                            //Console.WriteLine(arrayCortada_Y.Length);
-                                            //Console.WriteLine(arrayCortada_X.Length);
-                                            //Console.WriteLine("++++++++++++++++++++++++++++++++");
-
-
-                                            //for(int i=0; i < arrayCortada_Y.Length; i++)
-                                            //{
-                                            //    Console.WriteLine(arrayCortada_X[i]);
-                                            //}
-
-
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
+                                        else if (sensoresEscolhidos[0] == "Termopar 2"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_10em10s(termopar2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        else if (sensoresEscolhidos[0] == "Lm35"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_10em10s(lm35_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_10em10s(mediaTermopares1e2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                    }
+                                    else if (String.Equals(amostragem, "A cada minuto")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_1em1min(sensores_time_1em1min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(termopar1_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        if (sensoresEscolhidos[0] == "Termopar 2"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(termopar2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        if (sensoresEscolhidos[0] == "Lm35"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(lm35_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        if (sensoresEscolhidos[0] == "Media dos termopares"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(mediaTermopares1e2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                    }
+                                    else if(String.Equals(amostragem, "A cada dois minutos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_2em2min(sensores_time_2em2min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(termopar1_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        if (sensoresEscolhidos[0] == "Termopar 2"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(termopar2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        if (sensoresEscolhidos[0] == "Lm35"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(lm35_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        if (sensoresEscolhidos[0] == "Media dos termopares"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(mediaTermopares1e2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+
+                                    }
+                                    else if (String.Equals(amostragem, "A cada cinco minutos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_5em5min(sensores_time_2em2min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_5em5min(termopar1_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+
+
                                     }
                                 }
                             }
@@ -918,7 +962,6 @@ namespace graficoDeTemperatura_2
             return arrayDeSaida;
         }
 
-
         private decimal[] arrayDecimalCortada_10em10s(decimal[] arrayEntradaY, DateTime[] arrayEntradaX, DateTime inicio, DateTime fim)
         {
             // Exemplo de chamada deste método:
@@ -933,7 +976,7 @@ namespace graficoDeTemperatura_2
             // Este método é chamado em um escopo onde já ocorreu uma pré análise das entradas do usuário
             // que representam o instante inicial e o instante final, de modo a garantir que essas entradas 
             // obedeçam a algumas regras. Por exemplo, inicio deve ser menor ou igual a fim, e ambos devem
-            // estar dentro do intervalo de tempo dos dados, conforme mostrado no relatório gerado.
+            // estar dentro do intervalo de tempo dos dados dos sensores, conforme mostrado no relatório gerado.
 
             // Assim, minha preocupação aqui é com o fato de que esses dados de inicio e fim fornecidos pelo
             // usuário podem não coincidir com amostras dos dados de tempo de 10 em 10 segundos a partir do
@@ -947,11 +990,16 @@ namespace graficoDeTemperatura_2
             DateTime inicio_corrigido;
             DateTime fim_corrigido;
 
+            //talvez este if não seja necessário
+            if (fim >= arrayEntradaX[arrayEntradaX.Length - 1])
+                fim = arrayEntradaX[arrayEntradaX.Length - 1];
+
             //inicialização básica para não dar erro:
             inicio_corrigido = arrayEntradaX[0];
             fim_corrigido = arrayEntradaX[arrayEntradaX.Length - 1];
             int diferenca = 0;
 
+            //talvez o método Datetime.Compare() possa ser substituido por < e > (menor e maior).
             for (int i = 0; i < arrayEntradaX.Length; i++){
                 if (DateTime.Compare(inicio, arrayEntradaX[i]) >= 0){
                     if (DateTime.Compare(inicio, arrayEntradaX[i]) == 0){
@@ -1057,6 +1105,290 @@ namespace graficoDeTemperatura_2
             return arrayDeSaida;
         }
 
+        private decimal[] arrayDecimalCortada_1em1min(decimal[] arrayEntradaY, DateTime[] arrayEntradaX, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntradaX[arrayEntradaX.Length - 1])
+                fim = arrayEntradaX[arrayEntradaX.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = arrayEntradaX[0];
+            fim_corrigido = arrayEntradaX[arrayEntradaX.Length - 1];
+            int diferenca = 0;
+
+            //talvez o método Datetime.Compare() possa ser substituido por < e > (menor e maior).
+            for (int i = 0; i < arrayEntradaX.Length; i++){
+                if (DateTime.Compare(inicio, arrayEntradaX[i]) >= 0){
+                    if (DateTime.Compare(inicio, arrayEntradaX[i]) == 0){
+                        inicio_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntradaX[i]).TotalSeconds;
+                        if (diferenca <= 30){
+                            inicio_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 60){
+                            if (i != (arrayEntradaX.Length - 1)){
+                                inicio_corrigido = arrayEntradaX[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntradaX.Length - 1; i >= 0; i--){
+                if (DateTime.Compare(fim, arrayEntradaX[i]) <= 0){
+                    if (DateTime.Compare(fim, arrayEntradaX[i]) == 0){
+                        fim_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntradaX[i] - fim).TotalSeconds;
+                        if (diferenca <= 30){
+                            fim_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 60){
+                            if (i != 0){
+                                fim_corrigido = arrayEntradaX[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 60) + 1;
+
+            decimal[] arrayDeSaida = new decimal[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntradaY.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntradaX[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntradaX[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntradaY[i];
+            }
+
+            return arrayDeSaida;
+        }
+
+        private decimal[] arrayDecimalCortada_2em2min(decimal[] arrayEntradaY, DateTime[] arrayEntradaX, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntradaX[arrayEntradaX.Length - 1])
+                fim = arrayEntradaX[arrayEntradaX.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = arrayEntradaX[0];
+            fim_corrigido = arrayEntradaX[arrayEntradaX.Length - 1];
+            int diferenca = 0;
+
+            //talvez o método Datetime.Compare() possa ser substituido por < e > (menor e maior).
+            for (int i = 0; i < arrayEntradaX.Length; i++){
+                if (DateTime.Compare(inicio, arrayEntradaX[i]) >= 0){
+                    if (DateTime.Compare(inicio, arrayEntradaX[i]) == 0){
+                        inicio_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntradaX[i]).TotalSeconds;
+                        if (diferenca <= 60){
+                            inicio_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 120){
+                            if (i != (arrayEntradaX.Length - 1)){
+                                inicio_corrigido = arrayEntradaX[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntradaX.Length - 1; i >= 0; i--){
+                if (DateTime.Compare(fim, arrayEntradaX[i]) <= 0){
+                    if (DateTime.Compare(fim, arrayEntradaX[i]) == 0){
+                        fim_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntradaX[i] - fim).TotalSeconds;
+                        if (diferenca <= 60){
+                            fim_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 120){
+                            if (i != 0){
+                                fim_corrigido = arrayEntradaX[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 120) + 1;
+
+            decimal[] arrayDeSaida = new decimal[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntradaY.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntradaX[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntradaX[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntradaY[i];
+            }
+
+            return arrayDeSaida;
+        }
+
+        private decimal[] arrayDecimalCortada_5em5min(decimal[] arrayEntradaY, DateTime[] arrayEntradaX, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntradaX[arrayEntradaX.Length - 1])
+                fim = arrayEntradaX[arrayEntradaX.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = arrayEntradaX[0];
+            fim_corrigido = arrayEntradaX[arrayEntradaX.Length - 1];
+            int diferenca = 0;
+
+            //talvez o método Datetime.Compare() possa ser substituido por < e > (menor e maior).
+            for (int i = 0; i < arrayEntradaX.Length; i++){
+                if (DateTime.Compare(inicio, arrayEntradaX[i]) >= 0){
+                    if (DateTime.Compare(inicio, arrayEntradaX[i]) == 0){
+                        inicio_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntradaX[i]).TotalSeconds;
+                        if (diferenca <= 150){
+                            inicio_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 300){
+                            if (i != (arrayEntradaX.Length - 1)){
+                                inicio_corrigido = arrayEntradaX[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntradaX.Length - 1; i >= 0; i--){
+                if (DateTime.Compare(fim, arrayEntradaX[i]) <= 0){
+                    if (DateTime.Compare(fim, arrayEntradaX[i]) == 0){
+                        fim_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntradaX[i] - fim).TotalSeconds;
+                        if (diferenca <= 150){
+                            fim_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 300){
+                            if (i != 0){
+                                fim_corrigido = arrayEntradaX[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 300) + 1;
+
+            decimal[] arrayDeSaida = new decimal[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntradaY.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntradaX[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntradaX[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntradaY[i];
+            }
+
+            return arrayDeSaida;
+        }
 
 
         private DateTime[] arrayDatetimeCortada(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
@@ -1081,8 +1413,6 @@ namespace graficoDeTemperatura_2
             return arrayDeSaida;
         }
 
-
-
         private DateTime[] arrayDatetimeCortada_10em10s(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
         {
             // Exemplo de chamada deste método:
@@ -1094,12 +1424,16 @@ namespace graficoDeTemperatura_2
             DateTime inicio_corrigido;
             DateTime fim_corrigido;
 
+            //talvez este if não seja necessário
+            if (fim >= arrayEntrada[arrayEntrada.Length - 1])
+                fim = arrayEntrada[arrayEntrada.Length - 1];
+
             //inicialização básica para não dar erro:
             inicio_corrigido = inicio;
-            fim_corrigido = fim;
+            fim_corrigido = arrayEntrada[arrayEntrada.Length - 1];
             int diferenca = 0;
 
-            for(int i=0; i<arrayEntrada.Length; i++){
+            for (int i=0; i<arrayEntrada.Length; i++){
                 if(inicio >= arrayEntrada[i]){
                     if(inicio == arrayEntrada[i]){
                         inicio_corrigido = arrayEntrada[i];
@@ -1157,7 +1491,6 @@ namespace graficoDeTemperatura_2
                 }
             }
 
-            //double tamanhoDaArrayDeSaida = (fim - inicio).TotalSeconds + 1;
             int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds/10) + 1;
             DateTime[] arrayDeSaida = new DateTime[tamanhoDaArrayDeSaida];
 
@@ -1178,7 +1511,284 @@ namespace graficoDeTemperatura_2
             return arrayDeSaida;
         }
         
+        private DateTime[] arrayDatetimeCortada_1em1min(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
 
+            //talvez este if não seja necessário
+            if (fim >= arrayEntrada[arrayEntrada.Length - 1])
+                fim = arrayEntrada[arrayEntrada.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = inicio;
+            fim_corrigido = arrayEntrada[arrayEntrada.Length - 1];
+            int diferenca = 0;
+
+            for (int i = 0; i < arrayEntrada.Length; i++){
+                if (inicio >= arrayEntrada[i]){
+                    if (inicio == arrayEntrada[i]){
+                        inicio_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntrada[i]).TotalSeconds;
+                        if (diferenca <= 30){
+                            inicio_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 60){
+                            if (i != (arrayEntrada.Length - 1)){
+                                inicio_corrigido = arrayEntrada[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntrada.Length - 1; i >= 0; i--){
+                if (fim <= arrayEntrada[i]){
+                    if (fim == arrayEntrada[i]){
+                        fim_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntrada[i] - fim).TotalSeconds;
+                        if (diferenca <= 30){
+                            fim_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 60){
+                            if (i != 0){
+                                fim_corrigido = arrayEntrada[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 60) + 1;
+            DateTime[] arrayDeSaida = new DateTime[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntrada.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntrada[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntrada[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
+            }
+
+            return arrayDeSaida;
+        }
+
+        private DateTime[] arrayDatetimeCortada_2em2min(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntrada[arrayEntrada.Length - 1])
+                fim = arrayEntrada[arrayEntrada.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = inicio;
+            fim_corrigido = arrayEntrada[arrayEntrada.Length - 1];
+            int diferenca = 0;
+
+            for (int i = 0; i < arrayEntrada.Length; i++){
+                if (inicio >= arrayEntrada[i]){
+                    if (inicio == arrayEntrada[i]){
+                        inicio_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntrada[i]).TotalSeconds;
+                        if (diferenca <= 60){
+                            inicio_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 120){
+                            if (i != (arrayEntrada.Length - 1)){
+                                inicio_corrigido = arrayEntrada[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntrada.Length - 1; i >= 0; i--){
+                if (fim <= arrayEntrada[i]){
+                    if (fim == arrayEntrada[i]){
+                        fim_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntrada[i] - fim).TotalSeconds;
+                        if (diferenca <= 60){
+                            fim_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 120){
+                            if (i != 0){
+                                fim_corrigido = arrayEntrada[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 120) + 1;
+            DateTime[] arrayDeSaida = new DateTime[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntrada.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntrada[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntrada[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
+            }
+
+            return arrayDeSaida;
+        }
+
+        private DateTime[] arrayDatetimeCortada_5em5min(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntrada[arrayEntrada.Length - 1])
+                fim = arrayEntrada[arrayEntrada.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = inicio;
+            fim_corrigido = arrayEntrada[arrayEntrada.Length - 1];
+            int diferenca = 0;
+
+            for (int i = 0; i < arrayEntrada.Length; i++){
+                if (inicio >= arrayEntrada[i]){
+                    if (inicio == arrayEntrada[i]){
+                        inicio_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntrada[i]).TotalSeconds;
+                        if (diferenca <= 150){
+                            inicio_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 300){
+                            if (i != (arrayEntrada.Length - 1)){
+                                inicio_corrigido = arrayEntrada[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntrada.Length - 1; i >= 0; i--){
+                if (fim <= arrayEntrada[i]){
+                    if (fim == arrayEntrada[i]){
+                        fim_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntrada[i] - fim).TotalSeconds;
+                        if (diferenca <= 150){
+                            fim_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 300){
+                            if (i != 0){
+                                fim_corrigido = arrayEntrada[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 300) + 1;
+            DateTime[] arrayDeSaida = new DateTime[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntrada.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntrada[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntrada[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
+            }
+
+            return arrayDeSaida;
+        }
 
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
