@@ -112,21 +112,21 @@ namespace graficoDeTemperatura_2
             mediaTermopares1e2_numeric = new decimal[numeroDeLinhas];
             sensores_time = new DateTime[numeroDeLinhas];
 
-            numeroDeLinhas_10em10s = numeroDeLinhas / 10;
+            numeroDeLinhas_10em10s =  numeroDeLinhas / 10 ;
             termopar1_numeric_10em10s = new decimal[numeroDeLinhas_10em10s];
             termopar2_numeric_10em10s = new decimal[numeroDeLinhas_10em10s];
             lm35_numeric_10em10s = new decimal[numeroDeLinhas_10em10s];
             mediaTermopares1e2_numeric_10em10s = new decimal[numeroDeLinhas_10em10s];
             sensores_time_10em10s = new DateTime[numeroDeLinhas_10em10s];
 
-            numeroDeLinhas_1em1min = numeroDeLinhas / 60;
+            numeroDeLinhas_1em1min =  numeroDeLinhas / 60 ;
             termopar1_numeric_1em1min = new decimal[numeroDeLinhas_1em1min];
             termopar2_numeric_1em1min = new decimal[numeroDeLinhas_1em1min];
             lm35_numeric_1em1min = new decimal[numeroDeLinhas_1em1min];
             mediaTermopares1e2_numeric_1em1min = new decimal[numeroDeLinhas_1em1min];
             sensores_time_1em1min = new DateTime[numeroDeLinhas_1em1min];
 
-            numeroDeLinhas_2em2min = numeroDeLinhas / 120;
+            numeroDeLinhas_2em2min =  numeroDeLinhas / 120 ;
             termopar1_numeric_2em2min = new decimal[numeroDeLinhas_2em2min];
             termopar2_numeric_2em2min = new decimal[numeroDeLinhas_2em2min];
             lm35_numeric_2em2min = new decimal[numeroDeLinhas_2em2min];
@@ -140,7 +140,7 @@ namespace graficoDeTemperatura_2
             mediaTermopares1e2_numeric_5em5min = new decimal[numeroDeLinhas_5em5min];
             sensores_time_5em5min = new DateTime[numeroDeLinhas_5em5min];
 
-            numeroDeLinhas_10em10min = numeroDeLinhas / 600;
+            numeroDeLinhas_10em10min =  numeroDeLinhas / 600;
             termopar1_numeric_10em10min = new decimal[numeroDeLinhas_10em10min];
             termopar2_numeric_10em10min = new decimal[numeroDeLinhas_10em10min];
             lm35_numeric_10em10min = new decimal[numeroDeLinhas_10em10min];
@@ -881,15 +881,15 @@ namespace graficoDeTemperatura_2
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(termopar1_numeric_1em1min, sensores_time_1em1min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        if (sensoresEscolhidos[0] == "Termopar 2"){
+                                        else if (sensoresEscolhidos[0] == "Termopar 2"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(termopar2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        if (sensoresEscolhidos[0] == "Lm35"){
+                                        else if (sensoresEscolhidos[0] == "Lm35"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(lm35_numeric_1em1min, sensores_time_1em1min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        if (sensoresEscolhidos[0] == "Media dos termopares"){
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_1em1min(mediaTermopares1e2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
@@ -902,15 +902,15 @@ namespace graficoDeTemperatura_2
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(termopar1_numeric_2em2min, sensores_time_2em2min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        if (sensoresEscolhidos[0] == "Termopar 2"){
+                                        else if (sensoresEscolhidos[0] == "Termopar 2"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(termopar2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        if (sensoresEscolhidos[0] == "Lm35"){
+                                        else if (sensoresEscolhidos[0] == "Lm35"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(lm35_numeric_2em2min, sensores_time_2em2min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-                                        if (sensoresEscolhidos[0] == "Media dos termopares"){
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_2em2min(mediaTermopares1e2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
@@ -918,15 +918,36 @@ namespace graficoDeTemperatura_2
                                     }
                                     else if (String.Equals(amostragem, "A cada cinco minutos")){
 
-                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_5em5min(sensores_time_2em2min, inicio, fim);
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_5em5min(sensores_time_5em5min, inicio, fim);
 
                                         if (sensoresEscolhidos[0] == "Termopar 1"){
                                             decimal[] arrayCortada_Y = arrayDecimalCortada_5em5min(termopar1_numeric_5em5min, sensores_time_5em5min, inicio, fim);
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
-
+                                        else if (sensoresEscolhidos[0] == "Termopar 2"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_5em5min(termopar2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        else if (sensoresEscolhidos[0] == "Lm35"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_5em5min(lm35_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_5em5min(mediaTermopares1e2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
 
                                     }
+                                    else if (String.Equals(amostragem, "A cada dez minutos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_10em10min(sensores_time_10em10min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1"){
+                                            decimal[] arrayCortada_Y = arrayDecimalCortada_10em10min(termopar1_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                            formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
+                                        }
+                                    }
+
                                 }
                             }
                         }
@@ -1390,6 +1411,102 @@ namespace graficoDeTemperatura_2
             return arrayDeSaida;
         }
 
+        private decimal[] arrayDecimalCortada_10em10min(decimal[] arrayEntradaY, DateTime[] arrayEntradaX, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntradaX[arrayEntradaX.Length - 1])
+                fim = arrayEntradaX[arrayEntradaX.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = arrayEntradaX[0];
+            fim_corrigido = arrayEntradaX[arrayEntradaX.Length - 1];
+            int diferenca = 0;
+
+            //talvez o método Datetime.Compare() possa ser substituido por < e > (menor e maior).
+            for (int i = 0; i < arrayEntradaX.Length; i++){
+                if (DateTime.Compare(inicio, arrayEntradaX[i]) >= 0){
+                    if (DateTime.Compare(inicio, arrayEntradaX[i]) == 0){
+                        inicio_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntradaX[i]).TotalSeconds;
+                        if (diferenca <= 300){
+                            inicio_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 600){
+                            if (i != (arrayEntradaX.Length - 1)){
+                                inicio_corrigido = arrayEntradaX[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntradaX.Length - 1; i >= 0; i--){
+                if (DateTime.Compare(fim, arrayEntradaX[i]) <= 0){
+                    if (DateTime.Compare(fim, arrayEntradaX[i]) == 0){
+                        fim_corrigido = arrayEntradaX[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntradaX[i] - fim).TotalSeconds;
+                        if (diferenca <= 300){
+                            fim_corrigido = arrayEntradaX[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 600){
+                            if (i != 0){
+                                fim_corrigido = arrayEntradaX[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntradaX[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 600) + 1;
+
+            decimal[] arrayDeSaida = new decimal[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntradaY.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntradaX[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntradaX[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntradaY[i];
+            }
+
+            return arrayDeSaida;
+        }
+
+
 
         private DateTime[] arrayDatetimeCortada(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
         {
@@ -1407,6 +1524,14 @@ namespace graficoDeTemperatura_2
                 if (arrayEntrada[i] == fim)
                     indice_aux_fim = i;
             }
+
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            Console.WriteLine("indice_aux_inicio: " + indice_aux_inicio);
+            Console.WriteLine("indice_aux_fim: " + indice_aux_fim);
+            Console.WriteLine("arrayDeSaida.Length: " + arrayDeSaida.Length);
+            Console.WriteLine("arrayEntrada.Length: " + arrayEntrada.Length);
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
             for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
                 arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
             }
@@ -1505,6 +1630,14 @@ namespace graficoDeTemperatura_2
                 if (arrayEntrada[i] == fim_corrigido)
                     indice_aux_fim = i;
             }
+
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            Console.WriteLine("indice_aux_inicio: " + indice_aux_inicio);
+            Console.WriteLine("indice_aux_fim: " + indice_aux_fim);
+            Console.WriteLine("arrayDeSaida.Length: " + arrayDeSaida.Length);
+            Console.WriteLine("arrayEntrada.Length: " + arrayEntrada.Length);
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
             for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
                 arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
             }
@@ -1597,6 +1730,14 @@ namespace graficoDeTemperatura_2
                 if (arrayEntrada[i] == fim_corrigido)
                     indice_aux_fim = i;
             }
+
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            Console.WriteLine("indice_aux_inicio: " + indice_aux_inicio);
+            Console.WriteLine("indice_aux_fim: " + indice_aux_fim);
+            Console.WriteLine("arrayDeSaida.Length: " + arrayDeSaida.Length);
+            Console.WriteLine("arrayEntrada.Length: " + arrayEntrada.Length);
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
             for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
                 arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
             }
@@ -1690,6 +1831,14 @@ namespace graficoDeTemperatura_2
                 if (arrayEntrada[i] == fim_corrigido)
                     indice_aux_fim = i;
             }
+
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+            Console.WriteLine("indice_aux_inicio: " + indice_aux_inicio);
+            Console.WriteLine("indice_aux_fim: " + indice_aux_fim);
+            Console.WriteLine("arrayDeSaida.Length: " + arrayDeSaida.Length);
+            Console.WriteLine("arrayEntrada.Length: " + arrayEntrada.Length);
+            Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
             for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
                 arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
             }
@@ -1783,6 +1932,101 @@ namespace graficoDeTemperatura_2
                 if (arrayEntrada[i] == fim_corrigido)
                     indice_aux_fim = i;
             }
+
+            for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
+                arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
+            }
+
+            return arrayDeSaida;
+        }
+
+        private DateTime[] arrayDatetimeCortada_10em10min(DateTime[] arrayEntrada, DateTime inicio, DateTime fim)
+        {
+            DateTime inicio_corrigido;
+            DateTime fim_corrigido;
+
+            //talvez este if não seja necessário
+            if (fim >= arrayEntrada[arrayEntrada.Length - 1])
+                fim = arrayEntrada[arrayEntrada.Length - 1];
+
+            //inicialização básica para não dar erro:
+            inicio_corrigido = inicio;
+            fim_corrigido = arrayEntrada[arrayEntrada.Length - 1];
+            int diferenca = 0;
+
+            for (int i = 0; i < arrayEntrada.Length; i++){
+                if (inicio >= arrayEntrada[i]){
+                    if (inicio == arrayEntrada[i]){
+                        inicio_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(inicio - arrayEntrada[i]).TotalSeconds;
+                        if (diferenca <= 300){
+                            inicio_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 600){
+                            if (i != (arrayEntrada.Length - 1)){
+                                inicio_corrigido = arrayEntrada[i + 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                inicio_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = arrayEntrada.Length - 1; i >= 0; i--){
+                if (fim <= arrayEntrada[i]){
+                    if (fim == arrayEntrada[i]){
+                        fim_corrigido = arrayEntrada[i];
+                        break;
+                    }
+                    else{
+                        diferenca = (int)(arrayEntrada[i] - fim).TotalSeconds;
+                        if (diferenca <= 300){
+                            fim_corrigido = arrayEntrada[i];
+                            diferenca = 0;
+                            break;
+                        }
+                        else if (diferenca <= 600){
+                            if (i != 0){
+                                fim_corrigido = arrayEntrada[i - 1];
+                                diferenca = 0;
+                                break;
+                            }
+                            else{
+                                fim_corrigido = arrayEntrada[i];
+                                diferenca = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            int tamanhoDaArrayDeSaida = (int)((fim_corrigido - inicio_corrigido).TotalSeconds / 600) + 1;
+            DateTime[] arrayDeSaida = new DateTime[tamanhoDaArrayDeSaida];
+
+            int tamanhoDaArrayDeEntrada = arrayEntrada.Length;
+
+            int indice_aux_inicio = 0;
+            int indice_aux_fim = 0;
+            for (int i = 0; i < tamanhoDaArrayDeEntrada; i++){
+                if (arrayEntrada[i] == inicio_corrigido)
+                    indice_aux_inicio = i;
+
+                if (arrayEntrada[i] == fim_corrigido)
+                    indice_aux_fim = i;
+            }
+
             for (int i = indice_aux_inicio; i <= indice_aux_fim; i++){
                 arrayDeSaida[i - indice_aux_inicio] = arrayEntrada[i];
             }
