@@ -1127,6 +1127,7 @@ namespace graficoDeTemperatura_2
                                     y2 = mediaTermopares1e2_numeric;
                                 }
 
+
                                 if (sensoresEscolhidos[2].Equals("Termopar 1")){
                                     x3 = sensores_time;
                                     y3 = termopar1_numeric;
@@ -1487,6 +1488,518 @@ namespace graficoDeTemperatura_2
 
                                 formularioGrafico1.plotarTresGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], (int)this.numericUpDown1.Value, numeroDeLinhas_10em10min,
                                     y1, x1, y2, x2, y3, x3);
+                            }
+                        }
+                        else if(nSensoresEscolhidos == 4){
+                            if (String.Equals(amostragem, "A cada segundo")){
+
+                                decimal[] y1, y2, y3, y4;
+                                DateTime[] x1, x2, x3, x4;
+
+                                //inicialização básica para não dar erro
+                                y1 = termopar1_numeric; y2 = termopar2_numeric; y3 = lm35_numeric; y4 = mediaTermopares1e2_numeric;
+                                x1 = sensores_time; x2 = sensores_time; x3 = sensores_time; x4 = sensores_time;
+
+                                if (sensoresEscolhidos[0].Equals("Termopar 1")){
+                                    x1 = sensores_time;
+                                    y1 = termopar1_numeric;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Termopar 2")){
+                                    x1 = sensores_time;
+                                    y1 = termopar2_numeric;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Lm35")){
+                                    x1 = sensores_time;
+                                    y1 = lm35_numeric;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Media dos termopares")){
+                                    x1 = sensores_time;
+                                    y1 = mediaTermopares1e2_numeric;
+                                }
+
+
+
+                                if (sensoresEscolhidos[1].Equals("Termopar 1")){
+                                    x2 = sensores_time;
+                                    y2 = termopar1_numeric;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Termopar 2")){
+                                    x2 = sensores_time;
+                                    y2 = termopar2_numeric;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Lm35")){
+                                    x2 = sensores_time;
+                                    y2 = lm35_numeric;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Media dos termopares")){
+                                    x2 = sensores_time;
+                                    y2 = mediaTermopares1e2_numeric;
+                                }
+
+
+                                if (sensoresEscolhidos[2].Equals("Termopar 1")){
+                                    x3 = sensores_time;
+                                    y3 = termopar1_numeric;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Termopar 2")){
+                                    x3 = sensores_time;
+                                    y3 = termopar2_numeric;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Lm35")){
+                                    x3 = sensores_time;
+                                    y3 = lm35_numeric;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Media dos termopares")){
+                                    x3 = sensores_time;
+                                    y3 = mediaTermopares1e2_numeric;
+                                }
+
+
+                                if (sensoresEscolhidos[3].Equals("Termopar 1")){
+                                    x4 = sensores_time;
+                                    y4 = termopar1_numeric;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Termopar 2")){
+                                    x4 = sensores_time;
+                                    y4 = termopar2_numeric;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Lm35")){
+                                    x4 = sensores_time;
+                                    y4 = lm35_numeric;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Media dos termopares")){
+                                    x4 = sensores_time;
+                                    y4 = mediaTermopares1e2_numeric;
+                                }
+
+
+                                formularioGrafico1.plotarQuatroGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], sensoresEscolhidos[3], (int)this.numericUpDown1.Value, numeroDeLinhas,
+                                    y1, x1, y2, x2, y3, x3, y4, x4);
+                            }
+                            else if (String.Equals(amostragem, "A cada dez segundos")){
+
+                                decimal[] y1, y2, y3, y4;
+                                DateTime[] x1, x2, x3, x4;
+
+                                //inicialização básica para não dar erro
+                                y1 = termopar1_numeric_10em10s; y2 = termopar2_numeric_10em10s; y3 = lm35_numeric_10em10s; y4 = mediaTermopares1e2_numeric_10em10s;
+                                x1 = sensores_time_10em10s; x2 = sensores_time_10em10s; x3 = sensores_time_10em10s; x4 = sensores_time_10em10s;
+
+                                if (sensoresEscolhidos[0].Equals("Termopar 1")){
+                                    x1 = sensores_time_10em10s;
+                                    y1 = termopar1_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Termopar 2")){
+                                    x1 = sensores_time_10em10s;
+                                    y1 = termopar2_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Lm35")){
+                                    x1 = sensores_time_10em10s;
+                                    y1 = lm35_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Media dos termopares")){
+                                    x1 = sensores_time_10em10s;
+                                    y1 = mediaTermopares1e2_numeric_10em10s;
+                                }
+
+
+
+                                if (sensoresEscolhidos[1].Equals("Termopar 1")){
+                                    x2 = sensores_time_10em10s;
+                                    y2 = termopar1_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Termopar 2")){
+                                    x2 = sensores_time_10em10s;
+                                    y2 = termopar2_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Lm35")){
+                                    x2 = sensores_time_10em10s;
+                                    y2 = lm35_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Media dos termopares")){
+                                    x2 = sensores_time_10em10s;
+                                    y2 = mediaTermopares1e2_numeric_10em10s;
+                                }
+
+
+                                if (sensoresEscolhidos[2].Equals("Termopar 1")){
+                                    x3 = sensores_time_10em10s;
+                                    y3 = termopar1_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Termopar 2")){
+                                    x3 = sensores_time_10em10s;
+                                    y3 = termopar2_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Lm35")){
+                                    x3 = sensores_time_10em10s;
+                                    y3 = lm35_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Media dos termopares")){
+                                    x3 = sensores_time_10em10s;
+                                    y3 = mediaTermopares1e2_numeric_10em10s;
+                                }
+
+
+                                if (sensoresEscolhidos[3].Equals("Termopar 1")){
+                                    x4 = sensores_time_10em10s;
+                                    y4 = termopar1_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Termopar 2")){
+                                    x4 = sensores_time_10em10s;
+                                    y4 = termopar2_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Lm35")){
+                                    x4 = sensores_time_10em10s;
+                                    y4 = lm35_numeric_10em10s;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Media dos termopares")){
+                                    x4 = sensores_time_10em10s;
+                                    y4 = mediaTermopares1e2_numeric_10em10s;
+                                }
+
+
+                                formularioGrafico1.plotarQuatroGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], sensoresEscolhidos[3], (int)this.numericUpDown1.Value, numeroDeLinhas_10em10s,
+                                    y1, x1, y2, x2, y3, x3, y4, x4);
+                            }
+                            else if (String.Equals(amostragem, "A cada minuto")){
+
+                                decimal[] y1, y2, y3, y4;
+                                DateTime[] x1, x2, x3, x4;
+
+                                //inicialização básica para não dar erro
+                                y1 = termopar1_numeric_1em1min; y2 = termopar2_numeric_1em1min; y3 = lm35_numeric_1em1min; y4 = mediaTermopares1e2_numeric_1em1min;
+                                x1 = sensores_time_1em1min; x2 = sensores_time_1em1min; x3 = sensores_time_1em1min; x4 = sensores_time_1em1min;
+
+                                if (sensoresEscolhidos[0].Equals("Termopar 1")){
+                                    x1 = sensores_time_1em1min;
+                                    y1 = termopar1_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Termopar 2")){
+                                    x1 = sensores_time_1em1min;
+                                    y1 = termopar2_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Lm35")){
+                                    x1 = sensores_time_1em1min;
+                                    y1 = lm35_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Media dos termopares")){
+                                    x1 = sensores_time_1em1min;
+                                    y1 = mediaTermopares1e2_numeric_1em1min;
+                                }
+
+
+
+                                if (sensoresEscolhidos[1].Equals("Termopar 1")){
+                                    x2 = sensores_time_1em1min;
+                                    y2 = termopar1_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Termopar 2")){
+                                    x2 = sensores_time_1em1min;
+                                    y2 = termopar2_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Lm35")){
+                                    x2 = sensores_time_1em1min;
+                                    y2 = lm35_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Media dos termopares")){
+                                    x2 = sensores_time_1em1min;
+                                    y2 = mediaTermopares1e2_numeric_1em1min;
+                                }
+
+
+                                if (sensoresEscolhidos[2].Equals("Termopar 1")){
+                                    x3 = sensores_time_1em1min;
+                                    y3 = termopar1_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Termopar 2")){
+                                    x3 = sensores_time_1em1min;
+                                    y3 = termopar2_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Lm35")){
+                                    x3 = sensores_time_1em1min;
+                                    y3 = lm35_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Media dos termopares")){
+                                    x3 = sensores_time_1em1min;
+                                    y3 = mediaTermopares1e2_numeric_1em1min;
+                                }
+
+
+                                if (sensoresEscolhidos[3].Equals("Termopar 1")){
+                                    x4 = sensores_time_1em1min;
+                                    y4 = termopar1_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Termopar 2")){
+                                    x4 = sensores_time_1em1min;
+                                    y4 = termopar2_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Lm35")){
+                                    x4 = sensores_time_1em1min;
+                                    y4 = lm35_numeric_1em1min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Media dos termopares")){
+                                    x4 = sensores_time_1em1min;
+                                    y4 = mediaTermopares1e2_numeric_1em1min;
+                                }
+
+
+                                formularioGrafico1.plotarQuatroGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], sensoresEscolhidos[3], (int)this.numericUpDown1.Value, numeroDeLinhas_1em1min,
+                                    y1, x1, y2, x2, y3, x3, y4, x4);
+                            }
+                            else if (String.Equals(amostragem, "A cada dois minutos")){
+
+                                decimal[] y1, y2, y3, y4;
+                                DateTime[] x1, x2, x3, x4;
+
+                                //inicialização básica para não dar erro
+                                y1 = termopar1_numeric_2em2min; y2 = termopar2_numeric_2em2min; y3 = lm35_numeric_2em2min; y4 = mediaTermopares1e2_numeric_2em2min;
+                                x1 = sensores_time_2em2min; x2 = sensores_time_2em2min; x3 = sensores_time_2em2min; x4 = sensores_time_2em2min;
+
+                                if (sensoresEscolhidos[0].Equals("Termopar 1")){
+                                    x1 = sensores_time_2em2min;
+                                    y1 = termopar1_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Termopar 2")){
+                                    x1 = sensores_time_2em2min;
+                                    y1 = termopar2_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Lm35")){
+                                    x1 = sensores_time_2em2min;
+                                    y1 = lm35_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Media dos termopares")){
+                                    x1 = sensores_time_2em2min;
+                                    y1 = mediaTermopares1e2_numeric_2em2min;
+                                }
+
+
+
+                                if (sensoresEscolhidos[1].Equals("Termopar 1")){
+                                    x2 = sensores_time_2em2min;
+                                    y2 = termopar1_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Termopar 2")){
+                                    x2 = sensores_time_2em2min;
+                                    y2 = termopar2_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Lm35")){
+                                    x2 = sensores_time_2em2min;
+                                    y2 = lm35_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Media dos termopares")){
+                                    x2 = sensores_time_2em2min;
+                                    y2 = mediaTermopares1e2_numeric_2em2min;
+                                }
+
+
+                                if (sensoresEscolhidos[2].Equals("Termopar 1")){
+                                    x3 = sensores_time_2em2min;
+                                    y3 = termopar1_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Termopar 2")){
+                                    x3 = sensores_time_2em2min;
+                                    y3 = termopar2_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Lm35")){
+                                    x3 = sensores_time_2em2min;
+                                    y3 = lm35_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Media dos termopares")){
+                                    x3 = sensores_time_2em2min;
+                                    y3 = mediaTermopares1e2_numeric_2em2min;
+                                }
+
+
+                                if (sensoresEscolhidos[3].Equals("Termopar 1")){
+                                    x4 = sensores_time_2em2min;
+                                    y4 = termopar1_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Termopar 2")){
+                                    x4 = sensores_time_2em2min;
+                                    y4 = termopar2_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Lm35")){
+                                    x4 = sensores_time_2em2min;
+                                    y4 = lm35_numeric_2em2min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Media dos termopares")){
+                                    x4 = sensores_time_2em2min;
+                                    y4 = mediaTermopares1e2_numeric_2em2min;
+                                }
+
+
+                                formularioGrafico1.plotarQuatroGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], sensoresEscolhidos[3], (int)this.numericUpDown1.Value, numeroDeLinhas_2em2min,
+                                    y1, x1, y2, x2, y3, x3, y4, x4);
+                            }
+                            else if (String.Equals(amostragem, "A cada cinco minutos")){
+
+                                decimal[] y1, y2, y3, y4;
+                                DateTime[] x1, x2, x3, x4;
+
+                                //inicialização básica para não dar erro
+                                y1 = termopar1_numeric_5em5min; y2 = termopar2_numeric_5em5min; y3 = lm35_numeric_5em5min; y4 = mediaTermopares1e2_numeric_5em5min;
+                                x1 = sensores_time_5em5min; x2 = sensores_time_5em5min; x3 = sensores_time_5em5min; x4 = sensores_time_5em5min;
+
+                                if (sensoresEscolhidos[0].Equals("Termopar 1")){
+                                    x1 = sensores_time_5em5min;
+                                    y1 = termopar1_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Termopar 2")){
+                                    x1 = sensores_time_5em5min;
+                                    y1 = termopar2_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Lm35")){
+                                    x1 = sensores_time_5em5min;
+                                    y1 = lm35_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Media dos termopares")){
+                                    x1 = sensores_time_5em5min;
+                                    y1 = mediaTermopares1e2_numeric_5em5min;
+                                }
+
+
+
+                                if (sensoresEscolhidos[1].Equals("Termopar 1")){
+                                    x2 = sensores_time_5em5min;
+                                    y2 = termopar1_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Termopar 2")){
+                                    x2 = sensores_time_5em5min;
+                                    y2 = termopar2_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Lm35")){
+                                    x2 = sensores_time_5em5min;
+                                    y2 = lm35_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Media dos termopares")){
+                                    x2 = sensores_time_5em5min;
+                                    y2 = mediaTermopares1e2_numeric_5em5min;
+                                }
+
+
+                                if (sensoresEscolhidos[2].Equals("Termopar 1")){
+                                    x3 = sensores_time_5em5min;
+                                    y3 = termopar1_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Termopar 2")){
+                                    x3 = sensores_time_5em5min;
+                                    y3 = termopar2_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Lm35")){
+                                    x3 = sensores_time_5em5min;
+                                    y3 = lm35_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Media dos termopares")){
+                                    x3 = sensores_time_5em5min;
+                                    y3 = mediaTermopares1e2_numeric_5em5min;
+                                }
+
+
+                                if (sensoresEscolhidos[3].Equals("Termopar 1")){
+                                    x4 = sensores_time_5em5min;
+                                    y4 = termopar1_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Termopar 2")){
+                                    x4 = sensores_time_5em5min;
+                                    y4 = termopar2_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Lm35")){
+                                    x4 = sensores_time_5em5min;
+                                    y4 = lm35_numeric_5em5min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Media dos termopares")){
+                                    x4 = sensores_time_5em5min;
+                                    y4 = mediaTermopares1e2_numeric_5em5min;
+                                }
+
+
+                                formularioGrafico1.plotarQuatroGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], sensoresEscolhidos[3], (int)this.numericUpDown1.Value, numeroDeLinhas_5em5min,
+                                    y1, x1, y2, x2, y3, x3, y4, x4);
+                            }
+                            else if (String.Equals(amostragem, "A cada dez minutos")){
+
+                                decimal[] y1, y2, y3, y4;
+                                DateTime[] x1, x2, x3, x4;
+
+                                //inicialização básica para não dar erro
+                                y1 = termopar1_numeric_10em10min; y2 = termopar2_numeric_10em10min; y3 = lm35_numeric_10em10min; y4 = mediaTermopares1e2_numeric_10em10min;
+                                x1 = sensores_time_10em10min; x2 = sensores_time_10em10min; x3 = sensores_time_10em10min; x4 = sensores_time_10em10min;
+
+                                if (sensoresEscolhidos[0].Equals("Termopar 1")){
+                                    x1 = sensores_time_10em10min;
+                                    y1 = termopar1_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Termopar 2")){
+                                    x1 = sensores_time_10em10min;
+                                    y1 = termopar2_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Lm35")){
+                                    x1 = sensores_time_10em10min;
+                                    y1 = lm35_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[0].Equals("Media dos termopares")){
+                                    x1 = sensores_time_10em10min;
+                                    y1 = mediaTermopares1e2_numeric_10em10min;
+                                }
+
+
+
+                                if (sensoresEscolhidos[1].Equals("Termopar 1")){
+                                    x2 = sensores_time_10em10min;
+                                    y2 = termopar1_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Termopar 2")){
+                                    x2 = sensores_time_10em10min;
+                                    y2 = termopar2_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Lm35")){
+                                    x2 = sensores_time_10em10min;
+                                    y2 = lm35_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[1].Equals("Media dos termopares")){
+                                    x2 = sensores_time_10em10min;
+                                    y2 = mediaTermopares1e2_numeric_10em10min;
+                                }
+
+
+                                if (sensoresEscolhidos[2].Equals("Termopar 1")){
+                                    x3 = sensores_time_10em10min;
+                                    y3 = termopar1_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Termopar 2")){
+                                    x3 = sensores_time_10em10min;
+                                    y3 = termopar2_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Lm35")){
+                                    x3 = sensores_time_10em10min;
+                                    y3 = lm35_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[2].Equals("Media dos termopares")){
+                                    x3 = sensores_time_10em10min;
+                                    y3 = mediaTermopares1e2_numeric_10em10min;
+                                }
+
+
+                                if (sensoresEscolhidos[3].Equals("Termopar 1")){
+                                    x4 = sensores_time_10em10min;
+                                    y4 = termopar1_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Termopar 2")){
+                                    x4 = sensores_time_10em10min;
+                                    y4 = termopar2_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Lm35")){
+                                    x4 = sensores_time_10em10min;
+                                    y4 = lm35_numeric_10em10min;
+                                }
+                                else if (sensoresEscolhidos[3].Equals("Media dos termopares")){
+                                    x4 = sensores_time_10em10min;
+                                    y4 = mediaTermopares1e2_numeric_10em10min;
+                                }
+
+
+                                formularioGrafico1.plotarQuatroGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], sensoresEscolhidos[2], sensoresEscolhidos[3], (int)this.numericUpDown1.Value, numeroDeLinhas_10em10min,
+                                    y1, x1, y2, x2, y3, x3, y4, x4);
                             }
                         }
                     }

@@ -238,6 +238,78 @@ namespace graficoDeTemperatura_2
         }
 
 
+        public void plotarQuatroGraficos(String nomeDoGrafico1, String nomeDoGrafico2, String nomeDoGrafico3, String nomeDoGrafico4, int larguraDoGrafico, int numeroDePontos,
+    decimal[] dadosY1, DateTime[] dadosX1, decimal[] dadosY2, DateTime[] dadosX2, decimal[] dadosY3, DateTime[] dadosX3, decimal[] dadosY4, DateTime[] dadosX4)
+        {
+            chart1.Series.Clear();
+            chart1.Titles.Clear();
+            chart1.Legends.Clear();
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            chart1.Series.Add(nomeDoGrafico1);
+            chart1.Series.Add(nomeDoGrafico2);
+            chart1.Series.Add(nomeDoGrafico3);
+            chart1.Series.Add(nomeDoGrafico4);
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart1.Series[2].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart1.Series[3].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+            for (int i = 0; i < numeroDePontos; i++)
+            {
+                chart1.Series[0].Points.AddXY(dadosX1[i].ToString("T"), dadosY1[i]); //T maiúsculo mostra formato hh:mm:ss
+                chart1.Series[1].Points.AddXY(dadosX2[i].ToString("T"), dadosY2[i]); //T maiúsculo mostra formato hh:mm:ss
+                chart1.Series[2].Points.AddXY(dadosX3[i].ToString("T"), dadosY3[i]); //T maiúsculo mostra formato hh:mm:ss
+                chart1.Series[3].Points.AddXY(dadosX4[i].ToString("T"), dadosY4[i]); //T maiúsculo mostra formato hh:mm:ss
+            }
+
+            chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chart1.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            chart1.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+
+            chart1.Series[0].BorderWidth = larguraDoGrafico;
+            chart1.Series[0].Color = System.Drawing.Color.Red;
+            chart1.ChartAreas[0].AxisX.Enabled = AxisEnabled.False;
+            chart1.ChartAreas[0].AxisY.Enabled = AxisEnabled.False;
+
+            chart1.Series[1].BorderWidth = larguraDoGrafico;
+            chart1.Series[1].Color = System.Drawing.Color.Blue;
+
+            chart1.Series[2].BorderWidth = larguraDoGrafico;
+            chart1.Series[2].Color = System.Drawing.Color.Green;
+
+            chart1.Series[3].BorderWidth = larguraDoGrafico;
+            chart1.Series[3].Color = System.Drawing.Color.Brown;
+
+
+
+            chart1.Size = new Size(1920, 1080);
+
+            this.chart1.ChartAreas[0].AxisX.Enabled = AxisEnabled.True;
+            this.chart1.ChartAreas[0].AxisY.Enabled = AxisEnabled.True;
+            this.chart1.ChartAreas[0].AxisX.IntervalOffset = 0;
+            this.chart1.ChartAreas[0].AxisY.IntervalOffset = 0;
+
+            this.chart1.Titles.Add(nomeDoGrafico1 + ", " + nomeDoGrafico2 + " e " + nomeDoGrafico3 + " e " + nomeDoGrafico4);
+
+            this.chart1.ChartAreas[0].AxisX.Title = "hora";
+            this.chart1.ChartAreas[0].AxisY.Title = "temperatura ºC ";
+            this.chart1.ChartAreas[0].AxisX.LabelAutoFitMaxFontSize = 10; //tamanho dos números nos eixos
+            this.chart1.ChartAreas[0].AxisY.LabelAutoFitMaxFontSize = 10; //tamanho dos números nos eixos
+            this.chart1.ChartAreas[0].AxisX.MinorGrid.Enabled = true;
+            this.chart1.ChartAreas[0].AxisY.MinorGrid.Enabled = true;
+            this.chart1.ChartAreas[0].AxisX.MinorGrid.LineWidth = 1; //obs linha espessa pinta o fundo
+            this.chart1.ChartAreas[0].AxisX.MinorGrid.LineDashStyle = ChartDashStyle.Dot;
+            this.chart1.ChartAreas[0].AxisY.MinorGrid.LineDashStyle = ChartDashStyle.Dot;
+            this.chart1.ChartAreas[0].AxisX.MinorGrid.Interval = this.chart1.ChartAreas[0].AxisX.Interval / 10;
+            this.chart1.ChartAreas[0].AxisY.MinorGrid.Interval = this.chart1.ChartAreas[0].AxisY.Interval / 10;
+
+            this.chart1.BackColor = System.Drawing.Color.Gray;
+            chart1.Width = this.Width - 50;
+            chart1.Height = this.Height - 80;
+
+        }
+
 
 
         //este método é parte de uma tentativa de fazer o programa em c# executar o programa em python.
