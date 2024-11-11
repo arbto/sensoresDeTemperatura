@@ -122,6 +122,10 @@ namespace graficoDeTemperatura_2
             chart1.Series.Clear();
             chart1.Titles.Clear();
             chart1.Legends.Clear();
+
+            chart1.Legends.Add(nomeDoGrafico1);
+            chart1.Legends.Add(nomeDoGrafico2);
+
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             chart1.Series.Add(nomeDoGrafico1);
             chart1.Series.Add(nomeDoGrafico2);
@@ -180,6 +184,11 @@ namespace graficoDeTemperatura_2
             chart1.Series.Clear();
             chart1.Titles.Clear();
             chart1.Legends.Clear();
+
+            chart1.Legends.Add(nomeDoGrafico1);
+            chart1.Legends.Add(nomeDoGrafico2);
+            chart1.Legends.Add(nomeDoGrafico3);
+
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             chart1.Series.Add(nomeDoGrafico1);
             chart1.Series.Add(nomeDoGrafico2);
@@ -244,6 +253,12 @@ namespace graficoDeTemperatura_2
             chart1.Series.Clear();
             chart1.Titles.Clear();
             chart1.Legends.Clear();
+
+            chart1.Legends.Add(nomeDoGrafico1);
+            chart1.Legends.Add(nomeDoGrafico2);
+            chart1.Legends.Add(nomeDoGrafico3);
+            chart1.Legends.Add(nomeDoGrafico4);
+
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             chart1.Series.Add(nomeDoGrafico1);
             chart1.Series.Add(nomeDoGrafico2);
