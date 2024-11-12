@@ -2046,7 +2046,6 @@ namespace graficoDeTemperatura_2
 
                                 //Se o usuário escolheu plotar apenas 1 sensor...
                                 if (nSensoresEscolhidos == 1){
-
                                     if (String.Equals(amostragem, "A cada segundo")){
 
                                         DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
@@ -2164,7 +2163,170 @@ namespace graficoDeTemperatura_2
                                             formularioGrafico1.plotarApenasUmGrafico(sensoresEscolhidos[0], (int)this.numericUpDown1.Value, arrayCortada_Y.Length, arrayCortada_Y, arrayCortada_X);
                                         }
                                     }
+                                }
+                                else if (nSensoresEscolhidos == 2){
+                                    if (String.Equals(amostragem, "A cada segundo")){
 
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada(sensores_time, inicio, fim);
+                                        decimal[] arrayCortada_Y1 = arrayDecimalCortada(termopar1_numeric, sensores_time, inicio, fim);
+                                        decimal[] arrayCortada_Y2 = arrayDecimalCortada(termopar2_numeric, sensores_time, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1")
+                                            arrayCortada_Y1 = arrayDecimalCortada(termopar1_numeric, sensores_time, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Termopar 2")
+                                            arrayCortada_Y1 = arrayDecimalCortada(termopar2_numeric, sensores_time, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Lm35")
+                                            arrayCortada_Y1 = arrayDecimalCortada(lm35_numeric, sensores_time, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares")
+                                            arrayCortada_Y1 = arrayDecimalCortada(mediaTermopares1e2_numeric, sensores_time, inicio, fim);
+
+                                        if (sensoresEscolhidos[1] == "Termopar 1")
+                                            arrayCortada_Y2 = arrayDecimalCortada(termopar1_numeric, sensores_time, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Termopar 2")
+                                            arrayCortada_Y2 = arrayDecimalCortada(termopar2_numeric, sensores_time, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Lm35")
+                                            arrayCortada_Y2 = arrayDecimalCortada(lm35_numeric, sensores_time, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Media dos termopares")
+                                            arrayCortada_Y2 = arrayDecimalCortada(mediaTermopares1e2_numeric, sensores_time, inicio, fim);
+
+                                        formularioGrafico1.plotarDoisGraficos(sensoresEscolhidos[0],sensoresEscolhidos[1], (int)this.numericUpDown1.Value, arrayCortada_Y1.Length, 
+                                            arrayCortada_Y1, arrayCortada_X, arrayCortada_Y2, arrayCortada_X);
+                                    }
+                                    else if (String.Equals(amostragem, "A cada dez segundos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_10em10s(sensores_time_10em10s, inicio, fim);
+                                        decimal[] arrayCortada_Y1 = arrayDecimalCortada_10em10s(termopar1_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        decimal[] arrayCortada_Y2 = arrayDecimalCortada_10em10s(termopar2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10s(termopar1_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Termopar 2")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10s(termopar2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Lm35")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10s(lm35_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10s(mediaTermopares1e2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+
+                                        if (sensoresEscolhidos[1] == "Termopar 1")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10s(termopar1_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Termopar 2")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10s(termopar2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Lm35")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10s(lm35_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Media dos termopares")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10s(mediaTermopares1e2_numeric_10em10s, sensores_time_10em10s, inicio, fim);
+
+                                        formularioGrafico1.plotarDoisGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], (int)this.numericUpDown1.Value, arrayCortada_Y1.Length,
+                                            arrayCortada_Y1, arrayCortada_X, arrayCortada_Y2, arrayCortada_X);
+                                    }
+                                    else if (String.Equals(amostragem, "A cada minuto")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_1em1min(sensores_time_1em1min, inicio, fim);
+                                        decimal[] arrayCortada_Y1 = arrayDecimalCortada_1em1min(termopar1_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        decimal[] arrayCortada_Y2 = arrayDecimalCortada_1em1min(termopar2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1")
+                                            arrayCortada_Y1 = arrayDecimalCortada_1em1min(termopar1_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Termopar 2")
+                                            arrayCortada_Y1 = arrayDecimalCortada_1em1min(termopar2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Lm35")
+                                            arrayCortada_Y1 = arrayDecimalCortada_1em1min(lm35_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares")
+                                            arrayCortada_Y1 = arrayDecimalCortada_1em1min(mediaTermopares1e2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+
+                                        if (sensoresEscolhidos[1] == "Termopar 1")
+                                            arrayCortada_Y2 = arrayDecimalCortada_1em1min(termopar1_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Termopar 2")
+                                            arrayCortada_Y2 = arrayDecimalCortada_1em1min(termopar2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Lm35")
+                                            arrayCortada_Y2 = arrayDecimalCortada_1em1min(lm35_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Media dos termopares")
+                                            arrayCortada_Y2 = arrayDecimalCortada_1em1min(mediaTermopares1e2_numeric_1em1min, sensores_time_1em1min, inicio, fim);
+
+                                        formularioGrafico1.plotarDoisGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], (int)this.numericUpDown1.Value, arrayCortada_Y1.Length,
+                                            arrayCortada_Y1, arrayCortada_X, arrayCortada_Y2, arrayCortada_X);
+                                    }
+                                    else if (String.Equals(amostragem, "A cada dois minutos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_2em2min(sensores_time_2em2min, inicio, fim);
+                                        decimal[] arrayCortada_Y1 = arrayDecimalCortada_2em2min(termopar1_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        decimal[] arrayCortada_Y2 = arrayDecimalCortada_2em2min(termopar2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1")
+                                            arrayCortada_Y1 = arrayDecimalCortada_2em2min(termopar1_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Termopar 2")
+                                            arrayCortada_Y1 = arrayDecimalCortada_2em2min(termopar2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Lm35")
+                                            arrayCortada_Y1 = arrayDecimalCortada_2em2min(lm35_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares")
+                                            arrayCortada_Y1 = arrayDecimalCortada_2em2min(mediaTermopares1e2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+
+                                        if (sensoresEscolhidos[1] == "Termopar 1")
+                                            arrayCortada_Y2 = arrayDecimalCortada_2em2min(termopar1_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Termopar 2")
+                                            arrayCortada_Y2 = arrayDecimalCortada_2em2min(termopar2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Lm35")
+                                            arrayCortada_Y2 = arrayDecimalCortada_2em2min(lm35_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Media dos termopares")
+                                            arrayCortada_Y2 = arrayDecimalCortada_2em2min(mediaTermopares1e2_numeric_2em2min, sensores_time_2em2min, inicio, fim);
+
+                                        formularioGrafico1.plotarDoisGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], (int)this.numericUpDown1.Value, arrayCortada_Y1.Length,
+                                            arrayCortada_Y1, arrayCortada_X, arrayCortada_Y2, arrayCortada_X);
+                                    }
+                                    else if (String.Equals(amostragem, "A cada cinco minutos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_5em5min(sensores_time_5em5min, inicio, fim);
+                                        decimal[] arrayCortada_Y1 = arrayDecimalCortada_5em5min(termopar1_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        decimal[] arrayCortada_Y2 = arrayDecimalCortada_5em5min(termopar2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1")
+                                            arrayCortada_Y1 = arrayDecimalCortada_5em5min(termopar1_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Termopar 2")
+                                            arrayCortada_Y1 = arrayDecimalCortada_5em5min(termopar2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Lm35")
+                                            arrayCortada_Y1 = arrayDecimalCortada_5em5min(lm35_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares")
+                                            arrayCortada_Y1 = arrayDecimalCortada_5em5min(mediaTermopares1e2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+
+                                        if (sensoresEscolhidos[1] == "Termopar 1")
+                                            arrayCortada_Y2 = arrayDecimalCortada_5em5min(termopar1_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Termopar 2")
+                                            arrayCortada_Y2 = arrayDecimalCortada_5em5min(termopar2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Lm35")
+                                            arrayCortada_Y2 = arrayDecimalCortada_5em5min(lm35_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Media dos termopares")
+                                            arrayCortada_Y2 = arrayDecimalCortada_5em5min(mediaTermopares1e2_numeric_5em5min, sensores_time_5em5min, inicio, fim);
+
+                                        formularioGrafico1.plotarDoisGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], (int)this.numericUpDown1.Value, arrayCortada_Y1.Length,
+                                            arrayCortada_Y1, arrayCortada_X, arrayCortada_Y2, arrayCortada_X);
+                                    }
+                                    else if (String.Equals(amostragem, "A cada dez minutos")){
+
+                                        DateTime[] arrayCortada_X = arrayDatetimeCortada_10em10min(sensores_time_10em10min, inicio, fim);
+                                        decimal[] arrayCortada_Y1 = arrayDecimalCortada_10em10min(termopar1_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        decimal[] arrayCortada_Y2 = arrayDecimalCortada_10em10min(termopar2_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+
+                                        if (sensoresEscolhidos[0] == "Termopar 1")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10min(termopar1_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Termopar 2")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10min(termopar2_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Lm35")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10min(lm35_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        else if (sensoresEscolhidos[0] == "Media dos termopares")
+                                            arrayCortada_Y1 = arrayDecimalCortada_10em10min(mediaTermopares1e2_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+
+                                        if (sensoresEscolhidos[1] == "Termopar 1")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10min(termopar1_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Termopar 2")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10min(termopar2_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Lm35")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10min(lm35_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+                                        else if (sensoresEscolhidos[1] == "Media dos termopares")
+                                            arrayCortada_Y2 = arrayDecimalCortada_10em10min(mediaTermopares1e2_numeric_10em10min, sensores_time_10em10min, inicio, fim);
+
+                                        formularioGrafico1.plotarDoisGraficos(sensoresEscolhidos[0], sensoresEscolhidos[1], (int)this.numericUpDown1.Value, arrayCortada_Y1.Length,
+                                            arrayCortada_Y1, arrayCortada_X, arrayCortada_Y2, arrayCortada_X);
+                                    }
                                 }
                             }
                         }
